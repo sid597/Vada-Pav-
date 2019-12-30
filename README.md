@@ -35,6 +35,7 @@ now have ~500 meaningful images overall. Kept 80 images for test and ~420 for tr
 
 Images obtained were of different sizes so wrote a script to make the resolution smalland same for all 
 which can be found inside [resize.py](./resize.py). Used PIL library to resize the images in 300x300 resolution
+docker run -it tensorflow/tensorflow:1.1.0 bash
 
 ## Augumentation 
 
@@ -45,3 +46,16 @@ Now have a total of ~2000 images for training
 
 ## For model training
 For training I am going to use retrain.py provided by google tenserflow
+Steps I am going to follow :
+- Create a folder named 'images' and Inside it will have 2 folders one for trainigs images and the other with test images 
+- Download and retrain the Inception V3 net by google
+- Run the following command 
+
+  python retrain.py \
+  --bottleneck_dir=bottlenecks \
+  --model_dir=inception \
+  --summaries_dir=training_summaries/long \
+  --output_graph=retrained_graph.pb \
+  --output_labels=retrained_labels.txt \
+  --image_dir=images
+- This will generate my own image classifier for Vada pav.
