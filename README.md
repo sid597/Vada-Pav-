@@ -41,3 +41,7 @@ which can be found inside [resize.py](./resize.py). Used PIL library to resize t
 
 Augumented the images to have rotated and flipped images scripts for them are in [transform.py](./transform.py)
 Now have a total of ~2000 images for training
+
+
+## For model training
+For training I am going to use retrain.py provided by google tenserflow
