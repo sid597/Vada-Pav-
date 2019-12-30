@@ -25,6 +25,10 @@ I did it in 2 parts :
  2) Wrote scripts to download images from bing and google and saved them in 
  [bing_images](./bing_images) and [google_images](./google_images). The scripts are in [download_from_bing.py]
  (./download_from_bing.py) and [download_from_google.py](./download_from_google.py)
+ 
+ 
+ ** After I did this proces I found out an extension called Fatkun Batch Download Image which makes this process very easy
+    Searched for plugins before also but don't know how this one skipped from me 
 
 Found about 800 images combined from both google and bing. Then I manually checked and discarded the images 
 now have ~500 meaningful images overall. Kept 80 images for test and ~420 for training.
