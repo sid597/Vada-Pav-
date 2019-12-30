@@ -1,0 +1,61 @@
+'''
+To extract urls from Google :
+1) Search the term in google images and scroll down till the results are
+relevent to search term
+2) Use the following code to scrape the urls of all the images in the view 
+by pasting it inside the developer tools console it will automatically download 
+the list of all urls in urls.txt file
+
+
+NOTE: Following is js code 
+'''
+
+// pull down jquery into the JavaScript console
+
+var script = document.createElement('script');
+script.src = "https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js";
+document.getElementsByTagName('head')[0].appendChild(script);
+
+// grab the URLs
+
+var urls = $('.rg_di .rg_meta').map(function() { return JSON.parse($(this).text()).ou; });
+var urls = $('.iuscp varh .imgpt)   
+
+// write the URls to file (one per line)
+
+var textToSave = urls.toArray().join('\n');
+var hiddenElement = document.createElement('a');
+hiddenElement.href = 'data:attachment/text,' + encodeURI(textToSave);
+hiddenElement.target = '_blank';
+hiddenElement.download = 'urls.txt';
+hiddenElement.click();
+
+
+'''
+To download urls from Bing :
+
+1) Search the term in bing images and scroll down till the results are
+relevent to search term.
+2) Use the follwing code to extract all the urls by pasting it inside the developer tools console
+it will automatically download all the urls into bingUrls.txt file
+
+
+NOTE: Following is a js code 
+'''
+
+// Create an empty list where all the urls will be stored
+l = []
+list_elements = document.getElementsByClassName('iusc')            // Class name for the parent div which contains images is iusc
+len_list = list_elements.length
+
+// Inside each div tag find attribute 'm' and inside that we will find the url for image
+for (var i = 0; i < len_list; i++){
+    getAttr = list_elements[i].getAttribute('m')
+    url = JSON.parse(getAttr)['murl']
+    l.push(url)
+    }
+var hiddenElement = document.createElement('a');
+hiddenElement.href = 'data:attachment/text,';
+hiddenElement.target = '_blank';
+hiddenElement.download = 'bingUrls.txt';
+hiddenElement.click();
